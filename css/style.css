@@ -1,0 +1,135 @@
+@import url("https://fonts.googleapis.com/css2?family=Krona+One&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  background: #ebebeb;
+  position: relative;
+  overflow: hidden;
+}
+
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+button:focus {
+  outline: none;
+  border: none;
+}
+
+.btn {
+  position: absolute;
+  left: 60px;
+  top: 60px;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+  border-radius: 20px;
+  z-index: 10;
+}
+.btn .icons {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.btn .icons svg {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  fill: #fff;
+}
+.btn .icons svg.close {
+  opacity: 0;
+  transform: translate(-50%, -50%) translateY(125%);
+}
+.btn .btn--bg {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  background: #6c8cff;
+  border-radius: 25%;
+}
+
+nav {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #6c8cff;
+  clip-path: circle(0px at 60px 60px);
+  z-index: 10;
+}
+nav ul {
+  margin-left: 20vw;
+}
+nav ul li {
+  position: relative;
+  list-style: none;
+  padding: 10px 0;
+  cursor: pointer;
+  transform: translateX(-200px);
+  opacity: 0;
+  pointer-events: none;
+}
+nav ul li span {
+  font-size: 5rem;
+  font-family: "Krona One";
+  font-weight: bold;
+  opacity: 0.35;
+  transition: opacity 0.25s ease;
+  color: #fff;
+}
+nav ul li::before {
+  content: "";
+  position: absolute;
+  left: -20%;
+  top: 50%;
+  transform: translate(-50%, -50%) translateX(-50%);
+  width: 25%;
+  height: 8px;
+  border-radius: 10px;
+  background: #fff;
+  opacity: 0;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  pointer-events: none;
+}
+nav ul li:hover::before {
+  opacity: 1;
+  transform: translate(-50%, -50%) translateX(0);
+}
+nav ul li:hover span {
+  opacity: 1;
+}
+
+.support {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  padding: 10px;
+  display: flex;
+}
+.support a {
+  margin: 0 10px;
+  color: #333333;
+  font-size: 1.8rem;
+  backface-visibility: hidden;
+  transition: all 150ms ease;
+}
+.support a:hover {
+  transform: scale(1.1);
+}
